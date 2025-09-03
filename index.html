@@ -1,31 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Under Construction</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coming Soon — Your Company</title>
+  <meta name="description" content="We're crafting something special. Launching soon." />
+  <meta name="color-scheme" content="light dark" />
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #0d1117;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      flex-direction: column;
+    :root{
+      --bg-1: #0f1115;
+      --bg-2: #1a1f2b;
+      --fg-1: #eaeef7;
+      --fg-2: #a9b1c7;
+      --accent: #7dd3fc;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 10px 40px rgba(0,0,0,0.35);
     }
-    h1 {
-      font-size: 3rem;
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg-1: #f6f7fb;
+        --bg-2: #e9ecf5;
+        --fg-1: #0f172a;
+        --fg-2: #46506b;
+        --accent: #0ea5e9;
+        --card: rgba(255,255,255,0.7);
+        --border: rgba(15,17,21,0.08);
+        --shadow: 0 10px 30px rgba(15,17,21,0.08);
+      }
     }
-    p {
-      font-size: 1.2rem;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--fg-1);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, var(--bg-2), transparent 60%),
+        radial-gradient(1200px 600px at 90% 90%, var(--bg-2), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-1));
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:720px;
+      padding:40px 32px;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-align:center;
+      animation: fadeUp .6s ease-out both;
+    }
+
+    .logo{
+      width:min(180px, 45vw);
+      height:auto;
+      margin:0 auto 22px;
+      display:block;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.15));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-weight:700;
+      letter-spacing:.4px;
+      font-size: clamp(28px, 3.2vw, 40px);
+    }
+
+    p.lead{
+      margin:0 auto 22px;
+      max-width:54ch;
+      line-height:1.6;
+      color:var(--fg-2);
+      font-size: clamp(15px, 1.6vw, 18px);
+    }
+
+    .divider{
+      height:1px;
+      width:100%;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin:22px 0;
+    }
+
+    .meta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      font-size:14px;
+      color:var(--fg-2);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,0.04);
+      text-decoration:none;
+      color:inherit;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .pill:hover{ transform: translateY(-2px); border-color: rgba(125,211,252,.45); }
+
+    .accent{
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .footer{
+      margin-top:18px;
+      font-size:12px;
+      color:var(--fg-2);
+      opacity:.9;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0; transform: translateY(8px)}
+      to{opacity:1; transform: translateY(0)}
+    }
+    @keyframes float{
+      0%,100%{ transform: translateY(0) }
+      50%{ transform: translateY(-6px) }
+    }
+
+    /* Optional: simple countdown look (no JS) */
+    .coming{
+      margin-top:8px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      opacity:.9;
     }
   </style>
 </head>
 <body>
-  <h1>🚧 Site Under Construction 🚧</h1>
-  <p>We’ll be live soon, in shaa Allah.</p>
+  <!-- Replace logo.png with your file name, or use an external URL -->
+  <img class="logo" src="logo.png" alt="Company Logo" onerror="this.style.display='none'">
+
+  <main class="card" role="main" aria-label="Coming soon">
+    <h1>We’re Nearly Ready</h1>
+    <p class="lead">
+      We’re crafting a refined experience. <span class="accent">Coming soon.</span>
+      In the meantime, follow our updates or drop us a note.
+    </p>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <div class="meta">
+      <!-- Replace with your links or remove pills you don’t need -->
+      <a class="pill" href="mailto:hello@yourcompany.com" aria-label="Email us">
+        <!-- simple mail icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        hello@yourcompany.com
+      </a>
+      <a class="pill" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
+        <!-- ig icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a class="pill" href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener">
+        <!-- li icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 10v7M8 7.5v.01M12 17v-4.2a2 2 0 1 1 4 0V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="coming">Launching soon</div>
+
+    <div class="footer">© <span id="y"></span> Your Company. All rights reserved.</div>
+  </main>
+
+  <script>
+    // Sets footer year automatically
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
