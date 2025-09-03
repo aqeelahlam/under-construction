@@ -3,187 +3,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon — Your Company</title>
-  <meta name="description" content="We're crafting something special. Launching soon." />
+  <title>The Langit Rimba Eco Reserve — Coming Soon</title>
+  <meta name="description" content="The Langit Rimba Eco Reserve — Coming Soon." />
   <meta name="color-scheme" content="light dark" />
   <style>
-    :root{
-      --bg-1: #0f1115;
-      --bg-2: #1a1f2b;
-      --fg-1: #eaeef7;
-      --fg-2: #a9b1c7;
-      --accent: #7dd3fc;
-      --card: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 10px 40px rgba(0,0,0,0.35);
+    :root {
+      --bg: #f9fafb;
+      --fg: #0f172a;
+      --fg-muted: #64748b;
+      --accent: #0ea5e9;
+      --card: rgba(255,255,255,0.8);
+      --border: rgba(15,17,21,0.08);
+      --shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
-    @media (prefers-color-scheme: light) {
-      :root{
-        --bg-1: #f6f7fb;
-        --bg-2: #e9ecf5;
-        --fg-1: #0f172a;
-        --fg-2: #46506b;
-        --accent: #0ea5e9;
-        --card: rgba(255,255,255,0.7);
-        --border: rgba(15,17,21,0.08);
-        --shadow: 0 10px 30px rgba(15,17,21,0.08);
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --fg: #f8fafc;
+        --fg-muted: #94a3b8;
+        --accent: #7dd3fc;
+        --card: rgba(255,255,255,0.06);
+        --border: rgba(255,255,255,0.1);
+        --shadow: 0 8px 32px rgba(0,0,0,0.5);
       }
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--fg-1);
-      background:
-        radial-gradient(1200px 600px at 10% 10%, var(--bg-2), transparent 60%),
-        radial-gradient(1200px 600px at 90% 90%, var(--bg-2), transparent 60%),
-        linear-gradient(180deg, var(--bg-1), var(--bg-1));
-      display:grid;
-      place-items:center;
-      padding:24px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
     }
 
-    .card{
-      width:100%;
-      max-width:720px;
-      padding:40px 32px;
+    .card {
+      width: 100%;
+      max-width: 700px;
+      padding: 48px 32px;
       background: var(--card);
-      border:1px solid var(--border);
-      border-radius:24px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      text-align:center;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       animation: fadeUp .6s ease-out both;
     }
 
-    .logo{
-      width:min(180px, 45vw);
-      height:auto;
-      margin:0 auto 22px;
-      display:block;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.15));
+    .logo {
+      width: 200px;
+      height: auto;
+      margin: 0 auto 24px;
+      display: block;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.15));
       animation: float 6s ease-in-out infinite;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-weight:700;
-      letter-spacing:.4px;
-      font-size: clamp(28px, 3.2vw, 40px);
+    h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
-    p.lead{
-      margin:0 auto 22px;
-      max-width:54ch;
-      line-height:1.6;
-      color:var(--fg-2);
-      font-size: clamp(15px, 1.6vw, 18px);
+    p.lead {
+      font-size: clamp(16px, 4vw, 18px);
+      color: var(--fg-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
     }
 
-    .divider{
-      height:1px;
-      width:100%;
+    .divider {
+      height: 1px;
+      width: 100%;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
-      margin:22px 0;
+      margin: 28px 0;
     }
 
-    .meta{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-      font-size:14px;
-      color:var(--fg-2);
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border:1px solid var(--border);
-      border-radius:999px;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
       background: rgba(255,255,255,0.04);
-      text-decoration:none;
-      color:inherit;
-      transition: transform .15s ease, border-color .15s ease;
+      text-decoration: none;
+      color: inherit;
+      font-size: 15px;
+      transition: all .2s ease;
     }
-    .pill:hover{ transform: translateY(-2px); border-color: rgba(125,211,252,.45); }
-
-    .accent{
+    .pill:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
       color: var(--accent);
-      font-weight: 600;
     }
 
-    .footer{
-      margin-top:18px;
-      font-size:12px;
-      color:var(--fg-2);
-      opacity:.9;
+    .footer {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--fg-muted);
     }
 
-    @keyframes fadeUp{
-      from{opacity:0; transform: translateY(8px)}
-      to{opacity:1; transform: translateY(0)}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes float{
-      0%,100%{ transform: translateY(0) }
-      50%{ transform: translateY(-6px) }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    /* Optional: simple countdown look (no JS) */
-    .coming{
-      margin-top:8px;
-      font-size:14px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      opacity:.9;
+    /* Make sure it looks great on phones */
+    @media (max-width: 480px) {
+      .card { padding: 32px 20px; border-radius: 20px; }
+      .logo { width: 160px; margin-bottom: 18px; }
+      h1 { font-size: 24px; }
+      p.lead { font-size: 15px; }
+      .pill { font-size: 14px; padding: 10px 16px; }
     }
   </style>
 </head>
 <body>
-  <!-- Replace logo.png with your file name, or use an external URL -->
-  <img class="logo" src="logo.png" alt="Company Logo" onerror="this.style.display='none'">
-
   <main class="card" role="main" aria-label="Coming soon">
-    <h1>We’re Nearly Ready</h1>
-    <p class="lead">
-      We’re crafting a refined experience. <span class="accent">Coming soon.</span>
-      In the meantime, follow our updates or drop us a note.
-    </p>
+    <img class="logo" src="logo.png" alt="The Langit Rimba Logo" onerror="this.style.display='none'">
+
+    <h1>The Langit Rimba Eco Reserve</h1>
+    <p class="lead">We’re creating something special in nature. <br>Stay tuned — launching soon.</p>
 
     <div class="divider" aria-hidden="true"></div>
 
-    <div class="meta">
-      <!-- Replace with your links or remove pills you don’t need -->
-      <a class="pill" href="mailto:hello@yourcompany.com" aria-label="Email us">
-        <!-- simple mail icon -->
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        hello@yourcompany.com
-      </a>
-      <a class="pill" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
-        <!-- ig icon -->
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-        Instagram
-      </a>
-      <a class="pill" href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener">
-        <!-- li icon -->
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 10v7M8 7.5v.01M12 17v-4.2a2 2 0 1 1 4 0V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        LinkedIn
-      </a>
+    <div class="links">
+      <a class="pill" href="mailto:my.langitrimba@gmail.com">📧 Email us</a>
+      <a class="pill" href="https://www.instagram.com/thelangitrimba" target="_blank" rel="noopener">📷 Instagram</a>
     </div>
 
-    <div class="coming">Launching soon</div>
-
-    <div class="footer">© <span id="y"></span> Your Company. All rights reserved.</div>
+    <div class="footer">© <span id="y"></span> The Langit Rimba Eco Reserve</div>
   </main>
 
   <script>
-    // Sets footer year automatically
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
